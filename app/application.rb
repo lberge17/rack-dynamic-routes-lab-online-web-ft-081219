@@ -1,5 +1,5 @@
 class Application
-  @@items = []
+  @@items = [Item.new("Apples", 1.5)]
   
   def call(env)
     def call(env)

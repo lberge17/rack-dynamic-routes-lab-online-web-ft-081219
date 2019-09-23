@@ -11,6 +11,12 @@ class Application
       if @@items.include?(item_name)
         item = @@items.find{|item| item.name = item_name}
         resp.write item.price
+        
+        
+        song_title = req.path.split("/songs/").last #turn /songs/Sorry into Sorry
+        song = @@songs.find{|s| s.title == song_title}
+ 
+        resp.write song.artist
       else
         resp.write "Item not found"
         resp.status 400

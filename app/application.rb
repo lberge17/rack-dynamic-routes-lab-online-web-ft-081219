@@ -8,7 +8,7 @@ class Application
  
     if req.path.match(/items/)
       req.path.split("/items/").last
-      song.find
+      item = @@items.find{|item| item.price}
       resp.write ""
     else
       resp.write "Route not found"

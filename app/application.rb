@@ -8,6 +8,7 @@ class Application
  
     if req.path.match(/items/)
       req.path.split("/items/").last
+      song.find
       resp.write ""
     else
       resp.write "Route not found"
